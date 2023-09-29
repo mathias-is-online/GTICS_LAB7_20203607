@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/GTICS_F.html :: head(title='PAISES POR SITIO')}">
+
+</head>
+<body>
+<div th:insert="~{/GTICS_F.html :: navbar}"></div>
+<div class="container">
+    <h1>PAISES POR SITIO</h1>
+
+
+    <a class="btn btn-primary mt-4 mb-4" th:href="@{/}">Regresar</a>                 <!-- COMPLETAR -->
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>PAIS</th>
+            <th>Cantidad de equipos</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pais, info : ${listapaises}">
+            <td th:text="${info.index + 1}"></td>
+            <td th:text="${pais.getCountry()}"></td>
+            <td th:text="${pais.getCantidad()}"></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+</body>
+</html>
